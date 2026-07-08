@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { withBasePath } from "@/lib/base-path";
+import { usePhone } from "@/hooks/use-phone";
 
 export function CtaSection() {
+  const { wa: whatsappUrl } = usePhone();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -65,7 +67,7 @@ export function CtaSection() {
                     size="lg"
                     className="bg-foreground hover:bg-foreground/90 text-background px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base rounded-full group w-full sm:w-auto"
                   >
-                    <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer">
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                       Check Coverage via WhatsApp
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </a>

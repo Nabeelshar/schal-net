@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import { usePhone } from "@/hooks/use-phone";
 
 const footerLinks = {
   Network: [
@@ -35,7 +36,14 @@ const socialLinks = [
   { name: "Instagram", href: "#" },
 ];
 
+function resolveHref(href: string, wa: string, tel: string): string {
+  if (href === "tel:+92") return tel;
+  if (href.includes("YOUR_PHONE_NUMBER")) return wa;
+  return href;
+}
+
 export function FooterSection() {
+  const { wa: whatsappUrl, tel: telUrl } = usePhone();
   return (
     <footer className="relative bg-black">
       {/* Panoramic banner image */}
@@ -67,10 +75,10 @@ export function FooterSection() {
 
               {/* Social Links */}
               <div className="flex gap-6">
-                {socialLinks.map((link) => (
+                  {socialLinks.map((link) => (
                   <a
                     key={link.name}
-                    href={link.href}
+                    href={resolveHref(link.href, whatsappUrl, telUrl)}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm text-white/40 hover:text-white transition-colors flex items-center gap-1 group"
@@ -90,7 +98,7 @@ export function FooterSection() {
                   {links.map((link) => (
                     <li key={link.name}>
                       <a
-                        href={link.href}
+                        href={resolveHref(link.href, whatsappUrl, telUrl)}
                         target={link.href.startsWith("http") ? "_blank" : undefined}
                         rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="text-sm text-white/40 hover:text-white transition-colors inline-flex items-center gap-2"

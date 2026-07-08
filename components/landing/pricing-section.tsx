@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Check, Zap } from "lucide-react";
 import { withBasePath } from "@/lib/base-path";
+import { usePhone } from "@/hooks/use-phone";
 
 const plans = [
   {
@@ -48,6 +49,7 @@ const plans = [
 ];
 
 export function PricingSection() {
+  const { wa: whatsappUrl } = usePhone();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -160,7 +162,7 @@ export function PricingSection() {
 
                   {/* CTA */}
                   <a
-                    href="https://wa.me/YOUR_PHONE_NUMBER"
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`w-full py-3 sm:py-4 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
@@ -197,7 +199,7 @@ export function PricingSection() {
             </span>
           </div>
           <a
-            href="https://wa.me/YOUR_PHONE_NUMBER"
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm underline underline-offset-4 hover:text-foreground transition-colors"

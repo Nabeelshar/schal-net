@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { usePhone } from "@/hooks/use-phone";
 
 const navLinks = [
   { name: "Network",       href: "#features"      },
@@ -12,9 +13,8 @@ const navLinks = [
   { name: "Plans",         href: "#pricing"       },
 ];
 
-const WHATSAPP_URL = "https://wa.me/YOUR_PHONE_NUMBER";
-
 export function Navigation() {
+  const { wa: whatsappUrl, tel: telUrl } = usePhone();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -83,13 +83,13 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:+92"
+              href={telUrl}
               className={`transition-all duration-500 ${isScrolled ? "text-xs text-foreground/70 hover:text-foreground" : "text-sm text-white/70 hover:text-white"}`}
             >
               Call us
             </a>
             <a
-              href={WHATSAPP_URL}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 rounded-full border transition-all duration-500 ${
@@ -176,7 +176,7 @@ export function Navigation() {
               variant="outline"
               className="flex-1 rounded-full h-14 text-base"
             >
-              <a href="tel:+92" onClick={() => setIsMobileMenuOpen(false)}>
+              <a href={telUrl} onClick={() => setIsMobileMenuOpen(false)}>
                 Call us
               </a>
             </Button>
@@ -185,7 +185,7 @@ export function Navigation() {
               className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
             >
               <a
-                href={WHATSAPP_URL}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
