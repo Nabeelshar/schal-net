@@ -83,10 +83,12 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href={telUrl}
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`transition-all duration-500 ${isScrolled ? "text-xs text-foreground/70 hover:text-foreground" : "text-sm text-white/70 hover:text-white"}`}
             >
-              Call us
+              WhatsApp Contact
             </a>
             <a
               href={whatsappUrl}
@@ -176,8 +178,13 @@ export function Navigation() {
               variant="outline"
               className="flex-1 rounded-full h-14 text-base"
             >
-              <a href={telUrl} onClick={() => setIsMobileMenuOpen(false)}>
-                Call us
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                WhatsApp Contact
               </a>
             </Button>
             <Button
