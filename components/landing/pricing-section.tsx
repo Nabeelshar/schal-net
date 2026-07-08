@@ -7,43 +7,97 @@ import { usePhone } from "@/hooks/use-phone";
 
 const plans = [
   {
-    name: "Basic User",
-    description: "For social media & light streaming",
+    name: "Basic",
+    description: "For light browsing & social media",
     price: "1,500",
     priceSuffix: "PKR/mo",
     features: [
       "6 Mbps Unlimited Data",
-      "Ideal for Social Media & Streaming",
+      "Social Media & Messaging",
       "24/7 Local Support",
     ],
     cta: "Get connected",
     highlight: false,
   },
   {
-    name: "Premium Power",
-    description: "For gaming, streaming & remote work",
-    price: "3,000",
+    name: "Standard",
+    description: "For HD streaming & everyday use",
+    price: "1,800",
+    priceSuffix: "PKR/mo",
+    features: [
+      "8 Mbps Unlimited Data",
+      "HD Video Streaming",
+      "24/7 Local Support",
+    ],
+    cta: "Get connected",
+    highlight: false,
+  },
+  {
+    name: "Essential",
+    description: "For families & heavy streaming",
+    price: "2,000",
+    priceSuffix: "PKR/mo",
+    features: [
+      "10 Mbps Unlimited Data",
+      "Multi-Device Streaming",
+      "Priority Support",
+    ],
+    cta: "Get connected",
+    highlight: false,
+  },
+  {
+    name: "Premium",
+    description: "For remote work & entertainment",
+    price: "2,500",
+    priceSuffix: "PKR/mo",
+    features: [
+      "15 Mbps Unlimited Data",
+      "Work From Home Ready",
+      "Priority Support",
+    ],
+    cta: "Get connected",
+    highlight: false,
+  },
+  {
+    name: "Pro",
+    description: "For gaming & heavy downloads",
+    price: "4,000",
     priceSuffix: "PKR/mo",
     features: [
       "20 Mbps Unlimited Data",
-      "Dedicated Fiber Core",
       "Low-Ping Gaming Optimization",
+      "Dedicated Fiber Core",
       "Priority Support",
     ],
     cta: "Get connected",
     highlight: true,
   },
   {
-    name: "Enterprise / Corporate",
-    description: "For businesses & commercial use",
-    price: null,
-    priceSuffix: "",
+    name: "Ultra",
+    description: "For power users & content creators",
+    price: "5,500",
+    priceSuffix: "PKR/mo",
     features: [
-      "Dedicated Commercial Bandwidth",
-      "Static IP Allocation",
-      "SLA Guarantees",
+      "25 Mbps Unlimited Data",
+      "4K Streaming Ready",
+      "Dedicated Fiber Core",
+      "Premium Support",
     ],
-    cta: "Contact us",
+    cta: "Get connected",
+    highlight: false,
+  },
+  {
+    name: "Extreme",
+    description: "For ultimate speed & performance",
+    price: "6,500",
+    priceSuffix: "PKR/mo",
+    features: [
+      "30 Mbps Unlimited Data",
+      "Ultra-Low Latency",
+      "Dedicated Fiber Core",
+      "Premium Support",
+    ],
+    cta: "Get connected",
     highlight: false,
   },
 ];
@@ -100,14 +154,14 @@ export function PricingSection() {
 
         {/* Pricing cards */}
         <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {plans.map((plan, index) => (
               <div
                 key={plan.name}
                 className={`relative bg-background border transition-all duration-700 ${
                   plan.highlight
-                    ? "border-foreground lg:-mx-2 lg:z-10 lg:scale-105"
-                    : "border-foreground/10 lg:first:-mr-2 lg:last:-ml-2"
+                    ? "border-foreground xl:z-10 xl:scale-105"
+                    : "border-foreground/10"
                 } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
