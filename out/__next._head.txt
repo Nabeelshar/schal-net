@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[50492,["/_next/static/chunks/0rth4da0r90-l.js","/_next/static/chunks/0a6tyzf8xefwr.js"],"ViewportBoundary"]
+3:I[50492,["/_next/static/chunks/0rth4da0r90-l.js","/_next/static/chunks/0a6tyzf8xefwr.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Sachal Fiber Net Khairpur - High-Speed FTTH Fiber Internet"}],["$","meta","1",{"name":"description","content":"Pure optical fiber networks for Khairpur. Blazing-fast FTTH internet with speeds that never lag, unlimited data, and power-backed 99.9% uptime."}],["$","meta","2",{"name":"generator","content":"v0.app"}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"DBs5xJXg1mpwb3jydFc89"}
